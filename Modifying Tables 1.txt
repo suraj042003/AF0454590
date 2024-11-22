@@ -1,0 +1,14 @@
+create database Mydemo5;
+use Mydemo5;
+create table countries(code int, language varchar(20), capital varchar(20));
+select * from countries;
+create table department(id int, name varchar(20));
+select * from department;
+create table jobs(id int, profile varchar(20));
+select * from jobs;
+alter table countries rename to country_new;
+select * from country_new;
+ALTER TABLE department
+DROP COLUMN id;
+ALTER TABLE department
+ADD address VARCHAR(255);
