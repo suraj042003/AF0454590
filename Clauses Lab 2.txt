@@ -1,0 +1,20 @@
+create database organization;
+use organization;
+create table Employee(Employee_id int , Employee_name varchar(20), Employee_salary double);
+insert into Employee values(101,"Akshay",25000);
+insert into Employee values(102, "Amar",30000);
+insert into Employee values(103,"Sheetal",28000);
+insert into Employee values(104,"rohan",20000);
+insert into Employee values(105,"Karan",25000);
+insert into Employee values(106,"Suresh",25000);
+insert into Employee values(107,"Ravi",28000);
+UPDATE Employee
+SET Employee_salary = 30000
+WHERE Employee_name = 'Sheetal';
+
+SELECT * FROM Employee;
+
+SELECT * FROM Employee WHERE Employee_salary >= 25000;
+
+SELECT * FROM Employee ORDER BY Employee_salary ASC;
+SELECT * FROM Employee ORDER BY Employee_salary DESC;

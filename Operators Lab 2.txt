@@ -1,0 +1,13 @@
+create database customer_records;
+use customer_records;
+create table custdetails(custid int, custname varchar(20), city varchar(30), postalcode varchar(10) ,country varchar(40));
+select * from custdetails;
+insert into custdetails values(1,'alfred','berlin','12209','Germany');
+insert into custdetails values(2,'ana','mexico','05021','mexico');
+insert into custdetails values(3,'antanio','mexico','05023','mexico');
+insert into custdetails values(4,'harry','london','WA11DP','UK');
+insert into custdetails values(5,'sierra','lulea','S95822','sweden');
+select * from custdetails where country = 'mexico';
+select * from custdetails order by country asc;
+select count(*) as customer_count, country from custdetails group by country having country = 'mexico';
+select country, count(*) as count from custdetails group by country having count(*) > 1 order by count desc;

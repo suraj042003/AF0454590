@@ -1,0 +1,24 @@
+create database customer_details;
+use customer_details;
+create table customers(Customer_id int, Customer_name varchar(20), Customer_age int, Customer_City varchar(30), Customer_order_amount int);
+insert into customers values(101,'amar',23,'bhopal',25000);
+insert into customers values(102,'rohan',25,'bhopal',23000);
+insert into customers values(103,'sohan',23,'up',25000);
+insert into customers values(104,'kiran',28,'up',21000);
+insert into customers values(105,'Raj',28,'ajmer',22000);
+insert into customers values(106,'Shiv',28,'ajmer',29000);
+select * from customers;
+
+SELECT * FROM customers
+ORDER BY Customer_age ASC, Customer_order_amount ASC;
+
+SELECT * FROM customers
+ORDER BY  Customer_age DESC, Customer_order_amount DESC;
+
+SELECT Customer_city, Customer_age, COUNT(*) AS count
+FROM customers
+GROUP BY Customer_city, Customer_age
+ORDER BY Customer_city, Customer_age;
+
+
+

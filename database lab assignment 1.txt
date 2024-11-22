@@ -1,0 +1,38 @@
+
+create database student;
+use student;
+create table attributes(STUDENT_ID int, FIRST_NAME varchar(10), LAST_NAME varchar(20), PHONE_NUMBER int, MARKS int, COURSE_ID int primary key);
+select * from attributes;
+insert into attributes values(101, 'Ramesh', 'Kumar', 969438, 80, 501);
+insert into attributes values(102, 'Divisha', 'Sarkar', 678945, 79, 502);
+insert into attributes values(103, 'Swati', 'Dey', 897657, 66, 503);
+insert into attributes values(104, 'Gaurav', 'Jha', 945602, 90, 504);
+insert into attributes values(105, 'Rishabh', 'Jha', 896542, 77, 505);
+insert into attributes values(106, 'Anjali' , 'Jaiswal', 997658, 94, 506);
+insert into attributes values(107, 'Lavanya', 'Singh', 984378, 84, 507);
+insert into attributes values(108, 'Anshuman', 'Singh', 997564, 54, 508);
+
+create table details(COURSE_NAME varchar(30), COURSE_ID int, FOREIGN KEY (COURSE_ID) REFERENCES attributes(COURSE_ID));
+insert into details values('English', 501);
+insert into details values('Maths', 502);
+insert into details values('English', 503);
+insert into details values('Hindi', 504);
+insert into details values('Bengali', 505);
+insert into details values('Geography' , 506);
+insert into details values('History', 507);
+insert into details values('Geography', 508);
+select * from details;
+SELECT course_name, COUNT(*) AS student_count FROM details GROUP BY course_name;
+
+SELECT a.first_name, d.course_name, a.marks
+FROM attributes a
+JOIN details d ON a.course_id = d.course_id;
+
+SELECT
+    a.course_id,
+    AVG(a.marks) AS average_marks
+FROM
+    attributes a
+INNER JOIN details d ON a.course_id = d.course_id
+GROUP BY
+    a.course_id;

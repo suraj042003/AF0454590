@@ -1,0 +1,40 @@
+create database hospital_management_system;
+use hospital_management_system;
+create table HEALTH_CARE_WORKERS(EMPLOYEE_ID int , FIRST_NAME varchar(20), LAST_NAME varchar(10), EMAIL varchar(30), PHONE_NUMBER int primary key, HIRE_DATE date, SALARY double, DESIGNATION varchar(40));
+insert into HEALTH_CARE_WORKERS values(1001, 'Manisha', 'Jha', 'manishajha@gmail.com', 987654, '01-06-23', 32000.00, 'GP');
+insert into HEALTH_CARE_WORKERS values(1002, 'Manoj', 'Jaiswal','manojjaiswal@gmail.com', 897435,'04-06-23', 60000.00, 'Family Physician');
+insert into HEALTH_CARE_WORKERS values(1003, 'Gagan', 'Gupta', 'gagangupta@gmail.com', 998654, '12-07-23', 77000.00, 'Cardiologist');
+insert into HEALTH_CARE_WORKERS values(1004, 'Sneha', 'Sinha', 'snehasinha@gmail.com', 870325, '16-07-23', 56000.00, 'Internist');
+insert into HEALTH_CARE_WORKERS values(1005, 'Aashi', 'Singh', 'aashisingh@gmail.com', 987609, '20-07-23', 68000.00, 'Pediatrician');
+insert into HEALTH_CARE_WORKERS values(1006, 'Deepak','Kumar', 'deepakkumar@gmail.com', 679453,'24-07-23', 85000.00, 'Oncologist');
+insert into HEALTH_CARE_WORKERS values(1007, 'Shweta', 'Raj', 'shwetaraj@gmail.com', 986753, '25-07-23', 69700.00, 'Psychiatrist');
+insert into HEALTH_CARE_WORKERS values(1008, 'Ananya', 'Chowdhary', 'ananyachowdhary@gmail.com', 895680, '26-08-23',  78956.00, 'Surgeon');
+insert into HEALTH_CARE_WORKERS values(1009, 'Alok', 'Ghosh', 'alokghosh@gmail.com', 998764, '27-08-23', 89000.00, 'Pathologist');
+insert into HEALTH_CARE_WORKERS values(1010, 'Shreya', 'Dey', 'shreyadey@gmail.com', 897342, '29-09-23', 100000.00, 'Anesthesiologist');
+select * from HEALTH_CARE_WORKERS;
+
+SELECT 
+    first_name, 
+    last_name, 
+    designation, 
+    salary
+FROM 
+    HEALTH_CARE_WORKERS;
+
+
+SELECT
+    Designation,
+    COUNT(*) AS EmployeeCount
+FROM
+    HEALTH_CARE_WORKERS
+GROUP BY
+    Designation;
+
+SELECT FIRST_NAME
+FROM HEALTH_CARE_WORKERS
+WHERE Salary > 25000;
+
+SELECT FIRST_NAME
+FROM HEALTH_CARE_WORKERS
+WHERE EMPLOYEE_ID = 1001;
+

@@ -1,0 +1,14 @@
+create database employee;
+use employee;
+create table emp_details(emp_id int , emp_name varchar(20), job_name varchar(10) ,manager_id int , hire_date date ,salary double, comission int, dept_id int);
+select * from emp_details;
+insert into emp_details values(68319,'kayling','president', null, '1991-11-18', 6000.00, null, 1001);
+insert into emp_details values(66928,'blaze','manager', 68319,'1991-05-01', 2750.00, null, 3001);
+insert into emp_details values(67832,'clare','manager', 68319, '1991-06-09', 2550.00, null, 1001);
+insert into emp_details values(65646,'jonas','manager', 68319, '1991-04-02', 2957.00, null, 2001);
+insert into emp_details values(67858,'scarlet','analyst', 65646,'1997-04-19',3100.00, null, 2001);
+insert into emp_details values(9602,'frank','analyst', 65646,'1991-12-03',3100.00, null, 2001);
+select * from emp_details where salary between 2500 and 3500;
+select * from emp_details where salary like '2%';
+select * from emp_details where salary like '%2%' or salary like '%3%';
+select * from emp_details where  salary like '%0';

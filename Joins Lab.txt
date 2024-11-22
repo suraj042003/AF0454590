@@ -1,0 +1,52 @@
+create database institution;
+use institution;
+CREATE TABLE students (student_id INT PRIMARY KEY, student_name VARCHAR(50), age INT, course_id INT);
+insert into students values(1, 'John Smith', 22, 1);
+insert into students values(2, 'Jane Doe', 20, 2);
+insert into students values(3, 'Robert Johnson', 25, 1);
+insert into students values(4, 'Lisa Wang', 21, 3);
+insert into students values(5, 'Michael Brown', 32, 2);
+select * from students;
+
+CREATE TABLE courses (course_id INT PRIMARY KEY, course_name VARCHAR(50));
+INSERT INTO courses values(1, 'Math');
+INSERT INTO courses values(2, 'History');
+INSERT INTO courses values(3, 'Science');
+select * from courses;
+
+SELECT 
+    students.student_Name, 
+    courses.course_Name
+FROM 
+    students
+INNER JOIN 
+    courses ON students.course_id = courses.course_id;
+
+SELECT c.course_name, COUNT(s.student_id) AS TotalStudents
+FROM courses c
+JOIN students s ON c.course_id = s.course_id
+GROUP BY c.course_name;
+
+SELECT student_name
+FROM students
+WHERE age > 21;
+
+SELECT course_id, AVG(Age) AS AverageAge
+FROM students
+GROUP BY course_id;
+
+SELECT 
+    course_id, 
+    COUNT(*) AS total_students
+FROM 
+    students
+GROUP BY 
+    course_id
+ORDER BY 
+    total_students DESC;
+
+
+
+
+
+
